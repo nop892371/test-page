@@ -301,18 +301,37 @@
                 <h1 id="github-pages">Github Pages<a class="headerlink" href="#github-pages" title="Permanent link">#</a></h1>
 <p>Github Pagesはgithub上にサイトを公開できる機能です。</p>
 <h2 id="_1">導入手順<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<div class="admonition 概要">
+<p class="admonition-title">概要</p>
+<p>GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにするだけでリポジトリがWebサイトになります。<br />
+詳細な手順は以下です。</p>
+</div>
 <ol>
-<li>githubにpublicなリポジトリを作成します。
+<li><strong>リポジトリ作成</strong><br />
+    githubにpublicなリポジトリを作成します。
     <div class="codehilite"><pre><span></span>nop892371/test-page
-</pre></div></li>
-<li><code>git clone</code>でローカルにコピーします。</li>
-<li>何かファイルを作成しpushします。
-    何かpushしないとGithub Pagesを公開できません。</li>
-<li>リポジトリのsettingを開きます。<ol>
-<li>GitHub PagesのセクションでSourceを設定します。
-    <img alt="" src="2019-04-18-01-08-06.png" /></li>
+</pre></div>
+    privateリポジトリをGitHub Pagesで公開できるのは有料会員のみのようです。</li>
+<li><strong>git clone</strong><br />
+<code>git clone</code>でリポジトリtest-pageをローカルにコピーします。</li>
+<li><strong>ファイルpush</strong><br />
+    何かファイルを作成しpushします。<br />
+    リポジトリに何か1つファイルを置かないとGithub Pagesを公開できません。<br />
+    ここではリポジトリ直下にindex.mdを置いてみましょう。</li>
+<li><strong>リポジトリ設定</strong><br />
+    リポジトリのsettingを開きます。<ol>
+<li><strong>ソース設定</strong><br />
+    GitHub PagesのセクションでSourceを設定します。<br />
+    以下では<code>master branch</code>を設定しています。
+    <img alt="" src="2019-04-18-01-08-06.png" />
+    これでmasterブランチのルートフォルダがwebサイトのルートフォルダになります。</li>
+<li><strong>テーマ設定</strong><br />
+    上図で<code>Change theme</code>をクリックしテーマを選択します。</li>
 </ol>
 </li>
+<li><strong>確認</strong><br />
+    以上でGitHub Pagesのサイトが作成されました。<br />
+    指定のURLをブラウザで表示されれば成功です。</li>
 </ol>
                 
                   

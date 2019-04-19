@@ -4,7 +4,7 @@ Github Pagesはgithub上にサイトを公開できる機能です。
 
 ## 導入手順
 
-!!! 概要
+!!! abstract "概要"
     GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにするだけでリポジトリがWebサイトになります。  
     詳細な手順は以下です。
 

@@ -1,12 +1,12 @@
-# Github Pages
+# Github Pagesについて
 
-Github Pagesはgithub上にサイトを公開できる機能です。
+Github PagesはリポジトリをWebサイトとして公開できるGithubの機能です。  
+Githubのアカウントがあれば誰でも使えます。
 
-## 導入手順
+## GitHub PagesでWebサイトを公開するには
 
 !!! abstract "概要"
-    GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにするだけでリポジトリがWebサイトになります。  
-    詳細な手順は以下です。
+    GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにします。  
 
 1. **リポジトリ作成**  
     githubにpublicなリポジトリを作成します。
@@ -15,13 +15,18 @@ Github Pagesはgithub上にサイトを公開できる機能です。
     ```
     privateリポジトリをGitHub Pagesで公開できるのは有料会員のみのようです。
 2. **git clone**  
-    `git clone`でリポジトリtest-pageをローカルにコピーします。
+    `git clone`でリポジトリtest-pageの作業ワークフォルダをローカルに作成します。
 3. **ファイルpush**  
-    何かファイルを作成しpushします。  
+    何かファイルを作成し`git push`します。  
     リポジトリに何か1つファイルを置かないとGithub Pagesを公開できません。  
-    ここではリポジトリ直下にindex.mdを置いてみましょう。
+    ここではリポジトリ直下にindex.mdを置いてみます。
+    ```
+    # トップページ
+
+    トップページです。
+    ```
 4. **リポジトリ設定**  
-    リポジトリのsettingを開きます。
+    リポジトリのsettingタブをクリックし設定画面を開きます。
     1. **ソース設定**  
         GitHub PagesのセクションでSourceを設定します。  
         以下では`master branch`を設定しています。
@@ -31,4 +36,4 @@ Github Pagesはgithub上にサイトを公開できる機能です。
         上図で`Change theme`をクリックしテーマを選択します。
 5. **確認**  
     以上でGitHub Pagesのサイトが作成されました。  
-    指定のURLをブラウザで表示されれば成功です。
+    指定のURLが表示されれば成功です。

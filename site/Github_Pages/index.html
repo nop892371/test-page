@@ -238,6 +238,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mkdocs" title="mkdocsで作成したサイトを公開するには" class="md-nav__link">
+    mkdocsで作成したサイトを公開するには
+  </a>
+  
+</li>
+      
       
       
       
@@ -281,6 +288,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mkdocs" title="mkdocsで作成したサイトを公開するには" class="md-nav__link">
+    mkdocsで作成したサイトを公開するには
+  </a>
+  
+</li>
+      
       
       
       
@@ -307,14 +321,14 @@ Githubのアカウントがあれば誰でも使えます。</p>
 <p>GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにします。  </p>
 </div>
 <ol>
-<li><strong>リポジトリ作成</strong><br />
+<li><strong>Githubリポジトリ作成</strong><br />
     githubにpublicなリポジトリを作成します。
     <div class="codehilite"><pre><span></span>nop892371/test-page
 </pre></div>
     privateリポジトリをGitHub Pagesで公開できるのは有料会員のみのようです。</li>
-<li><strong>git clone</strong><br />
+<li><strong>作業ワークフォルダをローカルに作成</strong><br />
 <code>git clone</code>でリポジトリtest-pageの作業ワークフォルダをローカルに作成します。</li>
-<li><strong>ファイルpush</strong><br />
+<li><strong>ファイルをリモートにpush</strong><br />
     何かファイルを作成し<code>git push</code>します。<br />
     リポジトリに何か1つファイルを置かないとGithub Pagesを公開できません。<br />
     ここではリポジトリ直下にindex.mdを置いてみます。
@@ -322,7 +336,7 @@ Githubのアカウントがあれば誰でも使えます。</p>
 
 トップページです。
 </pre></div></li>
-<li><strong>リポジトリ設定</strong><br />
+<li><strong>リポジトリ設定の変更</strong><br />
     リポジトリのsettingタブをクリックし設定画面を開きます。<ol>
 <li><strong>ソース設定</strong><br />
     GitHub PagesのセクションでSourceを設定します。<br />
@@ -333,9 +347,25 @@ Githubのアカウントがあれば誰でも使えます。</p>
     上図で<code>Change theme</code>をクリックしテーマを選択します。</li>
 </ol>
 </li>
-<li><strong>確認</strong><br />
+<li><strong>サイトの確認</strong><br />
     以上でGitHub Pagesのサイトが作成されました。<br />
     指定のURLが表示されれば成功です。</li>
+</ol>
+<h2 id="mkdocs">mkdocsで作成したサイトを公開するには<a class="headerlink" href="#mkdocs" title="Permanent link">#</a></h2>
+<p><a href="https://www.mkdocs.org/">mkdocs</a>は静的サイト作成ツールです。<br />
+<a href="https://daringfireball.net/projects/markdown/">Markdown</a>形式でドキュメントを記述するとサイトを構築してくれるもので、複数人での情報共有などに向いています。<br />
+mkdocsで作成したサイトをGithub Pagesに公開する手順を示します。</p>
+<ol>
+<li><strong>mkdocsでサイトを作成する</strong><br />
+    mkdocsでサイトを作成します。
+    <div class="codehilite"><pre><span></span>mkdocs new test-page
+cd test-page
+code .
+&lt;※vscodeにてdocsフォルダ以下にドキュメントを作成&gt;
+mkdocs build
+</pre></div>
+    buildでsiteフォルダが作成されます。</li>
+<li>git pushでサイトをアップする</li>
 </ol>
                 
                   

@@ -41,6 +41,7 @@ Githubのアカウントがあれば誰でも使えます。
 ## mkdocsで作成したサイトを公開するには
 
 [mkdocs](https://www.mkdocs.org/)は静的サイト作成ツールです。  
+[Markdown](https://daringfireball.net/projects/markdown/)形式でドキュメントを記述するとサイトを構築してくれるもので、複数人での情報共有などに向いています。  
 mkdocsで作成したサイトをGithub Pagesに公開する手順を示します。
 
 1. **mkdocsでサイトを作成する**  
@@ -52,3 +53,5 @@ mkdocsで作成したサイトをGithub Pagesに公開する手順を示しま�
     <※vscodeにてdocsフォルダ以下にドキュメントを作成>
     mkdocs build
     ```
+    buildでsiteフォルダが作成されます。
+2. git pushでサイトをアップする

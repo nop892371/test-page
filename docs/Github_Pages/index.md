@@ -8,15 +8,15 @@ Githubのアカウントがあれば誰でも使えます。
 !!! abstract "概要"
     GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにします。  
 
-1. **リポジトリ作成**  
+1. **Githubリポジトリ作成**  
     githubにpublicなリポジトリを作成します。
     ```
     nop892371/test-page
     ```
     privateリポジトリをGitHub Pagesで公開できるのは有料会員のみのようです。
-2. **git clone**  
+2. **作業ワークフォルダをローカルに作成**  
     `git clone`でリポジトリtest-pageの作業ワークフォルダをローカルに作成します。
-3. **ファイルpush**  
+3. **ファイルをリモートにpush**  
     何かファイルを作成し`git push`します。  
     リポジトリに何か1つファイルを置かないとGithub Pagesを公開できません。  
     ここではリポジトリ直下にindex.mdを置いてみます。
@@ -25,7 +25,7 @@ Githubのアカウントがあれば誰でも使えます。
 
     トップページです。
     ```
-4. **リポジトリ設定**  
+4. **リポジトリ設定の変更**  
     リポジトリのsettingタブをクリックし設定画面を開きます。
     1. **ソース設定**  
         GitHub PagesのセクションでSourceを設定します。  
@@ -34,6 +34,21 @@ Githubのアカウントがあれば誰でも使えます。
         これでmasterブランチのルートフォルダがwebサイトのルートフォルダになります。
     2. **テーマ設定**  
         上図で`Change theme`をクリックしテーマを選択します。
-5. **確認**  
+5. **サイトの確認**  
     以上でGitHub Pagesのサイトが作成されました。  
     指定のURLが表示されれば成功です。
+
+## mkdocsで作成したサイトを公開するには
+
+[mkdocs](https://www.mkdocs.org/)は静的サイト作成ツールです。  
+mkdocsで作成したサイトをGithub Pagesに公開する手順を示します。
+
+1. **mkdocsでサイトを作成する**  
+    mkdocsでサイトを作成します。
+    ```
+    mkdocs new test-page
+    cd test-page
+    code .
+    <※vscodeにてdocsフォルダ以下にドキュメントを作成>
+    mkdocs build
+    ```

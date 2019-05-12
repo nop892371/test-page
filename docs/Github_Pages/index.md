@@ -1,6 +1,6 @@
 # Github Pagesについて
 
-Github PagesはリポジトリをWebサイトとして公開できるGithubの機能です。  
+[Github Pages](https://pages.github.com/)はGithubリポジトリをWebサイトとして公開できるGithubの機能です。  
 Githubのアカウントがあれば誰でも使えます。
 
 ## GitHub PagesでWebサイトを公開するには
@@ -40,8 +40,10 @@ Githubのアカウントがあれば誰でも使えます。
 
 ## mkdocsで作成したサイトを公開するには
 
+<!--
 [mkdocs](https://www.mkdocs.org/)は静的サイト作成ツールです。  
-[Markdown](https://daringfireball.net/projects/markdown/)形式でドキュメントを記述するとサイトを構築してくれるもので、複数人での情報共有などに向いています。  
+[Markdown](https://daringfireball.net/projects/markdown/)形式でドキュメントを記述するとサイトを構築してくれるもので、複数人での情報共有などに向いています。
+-->
 mkdocsで作成したサイトをGithub Pagesに公開する手順を示します。
 
 1. **mkdocsでサイトを作成する**  

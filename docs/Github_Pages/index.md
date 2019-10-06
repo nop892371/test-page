@@ -57,3 +57,5 @@ mkdocsで作成したサイトをGithub Pagesに公開する手順を示しま�
     ```
     buildでsiteフォルダが作成されます。
 2. git pushでサイトをアップする
+3. アクセスしてみる。
+    https://nop892371.github.io/test-page/site

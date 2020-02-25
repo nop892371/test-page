@@ -130,6 +130,30 @@ H^2^O
 
 Criticマークアップを使用できます。
 
+* \{\==ハイライト==} → {==ハイライト==}
+* \{\++追加++} → {++追加++}
+* \{\--削除--} → {--削除--}
+* \{\>>コメント<<} → {>>コメント<<}
+* \{\~~削除~>追加~~} → {~~削除~>追加~~}
+
+{~~
+
+ブロック指定可能。  
+こんなふうに。
+
+* aaa
+* bbb
+
+~>
+
+ブロック指定可能。  
+こんなふうに。
+
+* aaa
+* bbb
+
+~~}
+
 ???+ note "Criticのサンプル"
     Here is some {--*incorrect*--} Markdown.  I am adding this{++ here++}.  Here is some more {--text
     that I am removing--}text.  And here is even more {++text that I 
@@ -205,3 +229,12 @@ markdown_extensions:
 extra_css:
     - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
 ```
+
+これでたとえば文書に`:fa-coffee:`と書くと:fa-coffee:が表示されます。
+
+???+ note "アイコン一覧"
+    よく使いそうなアイコンの一覧です。
+
+    |icon   | code  |
+    |---|---|
+    | :fa-external-link:| `:fa-external-link:` |

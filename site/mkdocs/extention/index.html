@@ -628,6 +628,28 @@ H^2^O
 <p>H<sup>2</sup>O</p>
 <h3 id="critic">Critic<a class="headerlink" href="#critic" title="Permanent link">#</a></h3>
 <p>Criticマークアップを使用できます。</p>
+<ul>
+<li>{==ハイライト==} → <mark class="critic">ハイライト</mark></li>
+<li>{++追加++} → <ins class="critic">追加</ins></li>
+<li>{--削除--} → <del class="critic">削除</del></li>
+<li>{>&gt;コメント&lt;&lt;} → <span class="critic comment">コメント</span></li>
+<li>{~~削除~&gt;追加~~} → <del class="critic">削除</del><ins class="critic">追加</ins></li>
+</ul>
+<del class="critic block">
+<p>ブロック指定可能。<br />
+こんなふうに。</p>
+<ul>
+<li>aaa</li>
+<li>bbb</li>
+</ul>
+</del><ins class="critic block">
+<p>ブロック指定可能。<br />
+こんなふうに。</p>
+<ul>
+<li>aaa</li>
+<li>bbb</li>
+</ul>
+</ins>
 <details class="note" open="open"><summary>Criticのサンプル</summary><p>Here is some <del class="critic"><em>incorrect</em></del> Markdown.  I am adding this<ins class="critic"> here</ins>.  Here is some more <del class="critic">text
 that I am removing</del>text.  And here is even more <ins class="critic">text that I 
 am </ins>adding.<del class="critic"></p>
@@ -691,6 +713,24 @@ text</mark><span class="critic comment">This works quite well. I just wanted to 
 <span class="n">extra_css</span><span class="p">:</span>
     <span class="o">-</span> <span class="s2">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css&quot;</span>
 </pre></div>
+
+<p>これでたとえば文書に<code>:fa-coffee:</code>と書くと<i class="fa fa-coffee"></i>が表示されます。</p>
+<details class="note" open="open"><summary>アイコン一覧</summary><p>よく使いそうなアイコンの一覧です。</p>
+<table>
+<thead>
+<tr>
+<th>icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i class="fa fa-external-link"></i></td>
+<td><code>:fa-external-link:</code></td>
+</tr>
+</tbody>
+</table>
+</details>
                 
                   
                 

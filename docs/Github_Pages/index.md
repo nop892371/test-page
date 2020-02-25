@@ -47,7 +47,7 @@ Githubのアカウントがあれば誰でも使えます。
 mkdocsで作成したサイトをGithub Pagesに公開する手順を示します。
 
 1. **mkdocsでサイトを作成する**  
-    mkdocsでサイトを作成します。
+    [mkdocs](/mkdocs)でサイトを作成します。
     ```
     mkdocs new test-page
     cd test-page

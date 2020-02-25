@@ -42,7 +42,7 @@ markdown_extensions:
 |emoji:|
 |inlinehilite|
 |magiclink|
-|mark|
+|[mark](#mark)|マーカー機能|
 |smartsymbols|
 |[SuperFence](#superfence)|ブロック要素の下にコードブロックをネストする|
 |tasklist:|
@@ -128,39 +128,51 @@ H^2^O
 
 ### Critic
 
+Criticマークアップを使用できます。
 
-Here is some {--*incorrect*--} Markdown.  I am adding this{++ here++}.  Here is some more {--text
- that I am removing--}text.  And here is even more {++text that I 
- am ++}adding.{~~
+???+ note "Criticのサンプル"
+    Here is some {--*incorrect*--} Markdown.  I am adding this{++ here++}.  Here is some more {--text
+    that I am removing--}text.  And here is even more {++text that I 
+    am ++}adding.{~~
 
-~>  ~~}Paragraph was deleted and replaced with some spaces.{~~  ~>
+    ~>  ~~}Paragraph was deleted and replaced with some spaces.{~~  ~>
 
-~~}Spaces were removed and a paragraph was added.
+    ~~}Spaces were removed and a paragraph was added.
 
-And here is a comment on {==some
- text==}{>>This works quite well. I just wanted to comment on it.<<}. Substitutions {~~is~>are~~} great!
+    And here is a comment on {==some
+    text==}{>>This works quite well. I just wanted to comment on it.<<}. Substitutions {~~is~>are~~} great!
 
-General block handling.
+    General block handling.
 
-{--
+    {--
 
-* test remove
-* test remove
-* test remove
     * test remove
-* test remove
+    * test remove
+    * test remove
+        * test remove
+    * test remove
 
---}
+    --}
 
-{++
+    {++
 
-* test add
-* test add
-* test add
     * test add
-* test add
+    * test add
+    * test add
+        * test add
+    * test add
 
-++}
+    ++}
+
+### Mark
+
+&lt;mark>タグによるマークを挿入できます。
+
+!!! note "マーク"
+    ```
+    簡単に ==マーク== できます。
+    ```
+    簡単に ==マーク== できます。
 
 ### SuperFence
 

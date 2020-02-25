@@ -1,6 +1,6 @@
 # mkdocsを始めるには
 
-mkdocsはWebサイトを作成するツールです。  
+[mkdocs:fa-external-link:](https://www.mkdocs.org/)はWebサイトを作成するツールです。  
 Markdown形式のファイルをサイトに変換してくれます。
 
 ## mkdocsのインストール

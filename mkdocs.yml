@@ -19,11 +19,12 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.escapeall
   # - pymdownx.emoji:
   #     emoji_generator: !!python/name:pymdownx.emoji.to_svg
   # - pymdownx.inlinehilite
   # - pymdownx.magiclink
-  # - pymdownx.mark
+  - pymdownx.mark
   # - pymdownx.smartsymbols
   - pymdownx.superfences
   # - pymdownx.tasklist:
@@ -31,7 +32,8 @@ markdown_extensions:
   # - pymdownx.tilde
 
 extra_css:
-  - "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  # - "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
 
 extra_javascript: 
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML

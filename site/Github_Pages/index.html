@@ -380,6 +380,34 @@ Githubのアカウントがあれば誰でも使えます。</p>
 <p class="admonition-title">概要</p>
 <p>GitHubにリポジトリを作成し、GitHub Pagesの設定をオンにします。  </p>
 </div>
+<div class="codehilite"><pre><span></span>actor ユーザー as user
+participant 作業フォルダ as local
+participant Github as Github
+participant &quot;Github Pages&quot; as page
+
+== pages 作成 ==
+user -&gt; Github ++ : Publicリポジトリを作成
+user -&gt; Github : index.md作成
+user -&gt; Github : 設定変更
+Github --&gt; page ** : 反映
+deactivate
+user -&gt; page : 閲覧
+return
+
+== mkdocs ==
+user -&gt; Github : git clone
+Github --&gt; local **
+activate local
+user -&gt; local : mkdocs new
+user -&gt; local : 文書作成(/docs)
+user -&gt; local : mkdocs build
+user -&gt; local : git push
+local -&gt; Github -- : push
+Github --&gt; page : 反映
+user -&gt; page : 閲覧
+return
+</pre></div>
+
 <ol>
 <li><strong>Githubリポジトリ作成</strong><br />
     githubにpublicなリポジトリを作成します。

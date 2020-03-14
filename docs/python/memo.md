@@ -14,8 +14,10 @@ c:\work\env-ex> .\Scripts\activate
 
 ### 文書
 
-- 仮想環境: `c:\work\env-docs`
-- 文書ルート: `c:\work\env-docs\sample`
+| 項目       | 値                        |
+| ---------- | ------------------------- |
+| 仮想環境   | `c:\work\env-docs`        |
+| 文書ルート | `c:\work\env-docs\sample` |
 
 ```dos
 c:\work> python -m venv env-docs

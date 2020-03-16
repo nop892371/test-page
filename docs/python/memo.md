@@ -4,12 +4,15 @@
 
 ### 基本
 
+| 項目       | 値                        |
+| ---------- | ------------------------- |
+| 仮想環境   | `c:\work\env-ex`        |
+
 ```dos
-c:\work> python -m venv env-ex
-c:\work> cd env-ex
-c:\work\env-ex> .\Scripts\activate
-(env-ex) pip install some_lib
-(env-ex) deactivate
+> cd C:\work
+> python -m venv env-ex
+> cd env-ex
+> .\Scripts\activate
 ```
 
 ### 文書
@@ -20,13 +23,15 @@ c:\work\env-ex> .\Scripts\activate
 | 文書ルート | `c:\work\env-docs\sample` |
 
 ```dos
-c:\work> python -m venv env-docs
-c:\work> cd env-docs
-c:\work\env-docs> .\Scripts\activate
-(env-docs) env-docs> pip install mkdocs
-(env-docs) env-docs> pip install mkdocs-material
-(env-docs) env-docs> pip install fontawesome_markdown
-(env-docs) env-docs> mkdocs new sample 
-(env-docs) env-docs> cd sample 
-(env-docs) sample> curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml
+> cd C:\work
+> python -m venv env-docs
+> cd env-docs
+> .\Scripts\activate
+> pip install mkdocs
+> pip install mkdocs-material
+> pip install fontawesome_markdown
+> pip install mkdocs-material
+> mkdocs new sample 
+> cd sample 
+> curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml
 ```

@@ -475,11 +475,24 @@
                 <h1 id="python">Python メモ<a class="headerlink" href="#python" title="Permanent link">#</a></h1>
 <h2 id="_1">仮想環境の作り方<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <h3 id="_2">基本<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c">c:\work&gt; python -m venv env-ex</span>
-<span class="c">c:\work&gt; cd env-ex</span>
-<span class="c">c:\work\env-ex&gt; .\Scripts\activate</span>
-<span class="err">(env-ex) pip install some_lib</span>
-<span class="err">(env-ex) deactivate</span>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仮想環境</td>
+<td><code>c:\work\env-ex</code></td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code><span class="err">&gt; cd C:\work</span>
+<span class="err">&gt; python -m venv env-ex</span>
+<span class="err">&gt; cd env-ex</span>
+<span class="err">&gt; .\Scripts\activate</span>
 </code></pre></div>
 
 <h3 id="_3">文書<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
@@ -501,15 +514,17 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="c">c:\work&gt; python -m venv env-docs</span>
-<span class="c">c:\work&gt; cd env-docs</span>
-<span class="c">c:\work\env-docs&gt; .\Scripts\activate</span>
-<span class="err">(env-docs) env-docs&gt; pip install mkdocs</span>
-<span class="err">(env-docs) env-docs&gt; pip install mkdocs-material</span>
-<span class="err">(env-docs) env-docs&gt; pip install fontawesome_markdown</span>
-<span class="err">(env-docs) env-docs&gt; mkdocs new sample </span>
-<span class="err">(env-docs) env-docs&gt; cd sample </span>
-<span class="err">(env-docs) sample&gt; curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml</span>
+<div class="codehilite"><pre><span></span><code><span class="err">&gt; cd C:\work</span>
+<span class="err">&gt; python -m venv env-docs</span>
+<span class="err">&gt; cd env-docs</span>
+<span class="err">&gt; .\Scripts\activate</span>
+<span class="err">&gt; pip install mkdocs</span>
+<span class="err">&gt; pip install mkdocs-material</span>
+<span class="err">&gt; pip install fontawesome_markdown</span>
+<span class="err">&gt; pip install mkdocs-material</span>
+<span class="err">&gt; mkdocs new sample </span>
+<span class="err">&gt; cd sample </span>
+<span class="err">&gt; curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml</span>
 </code></pre></div>
                 
                   

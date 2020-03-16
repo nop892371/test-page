@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -42,17 +42,17 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#python" tabindex="1" class="md-skip">
+      <a href="#python" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="GHテストページ" class="md-header-nav__button md-logo">
+        <a href="../.." title="GHテストページ" aria-label="GHテストページ" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -104,7 +104,9 @@
               GHテストページ
             </span>
             <span class="md-header-nav__topic">
-              Python メモ
+              
+                Python メモ
+              
             </span>
           
         </div>
@@ -117,7 +119,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -147,7 +149,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -364,7 +366,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="仮想環境の作り方" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     仮想環境の作り方
   </a>
   
@@ -372,14 +374,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="基本" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     基本
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="文書" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     文書
   </a>
   
@@ -427,7 +429,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="仮想環境の作り方" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     仮想環境の作り方
   </a>
   
@@ -435,14 +437,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="基本" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     基本
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="文書" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     文書
   </a>
   
@@ -473,12 +475,12 @@
                 <h1 id="python">Python メモ<a class="headerlink" href="#python" title="Permanent link">#</a></h1>
 <h2 id="_1">仮想環境の作り方<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <h3 id="_2">基本<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<div class="codehilite"><pre><span></span>c:\work&gt; python -m venv env-ex
-c:\work&gt; cd env-ex
-c:\work\env-ex&gt; .\Scripts\activate
-(env-ex) pip install some_lib
-(env-ex) deactivate
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c">c:\work&gt; python -m venv env-ex</span>
+<span class="c">c:\work&gt; cd env-ex</span>
+<span class="c">c:\work\env-ex&gt; .\Scripts\activate</span>
+<span class="err">(env-ex) pip install some_lib</span>
+<span class="err">(env-ex) deactivate</span>
+</code></pre></div>
 
 <h3 id="_3">文書<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <table>
@@ -499,18 +501,19 @@ c:\work\env-ex&gt; .\Scripts\activate
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span>c:\work&gt; python -m venv env-docs
-c:\work&gt; cd env-docs
-c:\work\env-docs&gt; .\Scripts\activate
-(env-docs) env-docs&gt; pip install mkdocs
-(env-docs) env-docs&gt; pip install mkdocs-material
-(env-docs) env-docs&gt; pip install fontawesome_markdown
-(env-docs) env-docs&gt; mkdocs new sample 
-(env-docs) env-docs&gt; cd sample 
-(env-docs) sample&gt; curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="c">c:\work&gt; python -m venv env-docs</span>
+<span class="c">c:\work&gt; cd env-docs</span>
+<span class="c">c:\work\env-docs&gt; .\Scripts\activate</span>
+<span class="err">(env-docs) env-docs&gt; pip install mkdocs</span>
+<span class="err">(env-docs) env-docs&gt; pip install mkdocs-material</span>
+<span class="err">(env-docs) env-docs&gt; pip install fontawesome_markdown</span>
+<span class="err">(env-docs) env-docs&gt; mkdocs new sample </span>
+<span class="err">(env-docs) env-docs&gt; cd sample </span>
+<span class="err">(env-docs) sample&gt; curl https://raw.githubusercontent.com/nop892371/test-page/master/mkdocs.yml -OutFile mkdocs.yml</span>
+</code></pre></div>
                 
                   
+                
                 
               
               
@@ -556,9 +559,9 @@ c:\work\env-docs&gt; .\Scripts\activate
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -568,7 +571,7 @@ c:\work\env-docs&gt; .\Scripts\activate
       
     </div>
     
-      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
         
         
@@ -587,7 +590,7 @@ c:\work\env-docs&gt; .\Scripts\activate
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

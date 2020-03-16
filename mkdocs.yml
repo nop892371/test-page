@@ -30,6 +30,8 @@ markdown_extensions:
   # - pymdownx.tasklist:
   #     custom_checkbox: true
   # - pymdownx.tilde
+  - plantuml_markdown:
+      server: http://www.plantuml.com/plantuml
 
 extra_css:
   # - "https://use.fontawesome.com/releases/v5.8.1/css/all.css"

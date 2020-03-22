@@ -100,6 +100,12 @@
         ```
         ※vscode導入済みとします。
 
+[mk_exist_doc.ps1](mk_exist_doc.ps1)
+
+```powershell
+--8<-- "docs/python/mk_exist_doc.ps1"
+```
+
 ## vscodeのvimでESC押下時に日本語入力を解除する方法
 
 AutoHotKeyを使う方法。  

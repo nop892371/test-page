@@ -77,57 +77,8 @@
     @enduml
     ```
 
-    1. 仮想環境を作成  
-        ```powershell
-        > cd C:\work
-        > python -m venv env-docs
-        > cd env-docs
-        > .\Scripts\activate
-        ```
-    1. 文書をダウンロード
-        ```powershell
-        > git clone https://github.com/nop892371/test-page.git
-        > cd test-page
-        > pip install -r requirement.txt
-        ```
-    1. 疎通確認
-        ```powershell
-        > Start-Process mkdocs serve; sleep 3; start http://localhost:8000
-        ```
-    1. 文書を編集
-        ```powershell
-        > code test-page
-        ```
-        ※vscode導入済みとします。
+    [mk_exist_doc.ps1](mk_exist_doc.ps1)
 
-[mk_exist_doc.ps1](mk_exist_doc.ps1)
-
-```powershell
---8<-- "docs/python/mk_exist_doc.ps1"
-```
-
-## vscodeのvimでESC押下時に日本語入力を解除する方法
-
-AutoHotKeyを使う方法。  
-以下のスクリプトを作成し、"Vim_Mode.ahk"などの名前で保存して、起動時に実行するようにしておく。 [^ahk]
-
-```text
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-$Esc::
-  Send,{Esc}
-  Sleep 1
-  Send,{sc07B}
-  Return
-$^[::
-  Send,{^[}
-  Sleep 1
-  Send,{sc07B}
-  Return
-```
-
-
-[^ahk]: Windows10の場合、スタートアップディレクトリは`C:\Users\自分のユーザー名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`となる。
+    ```powershell
+    --8<-- "docs/python/mk_exist_doc.ps1"
+    ```

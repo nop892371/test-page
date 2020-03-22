@@ -1,0 +1,30 @@
+@startmindmap
+
+<style>
+mindmapDiagram {
+    BackGroundColor white
+    LineColor black
+    LineThickness 1
+    FontName 'MeiryoUI'
+}
+</style>
+skinparam shadowing false
+
+* サイト構成
+**_ マイページ
+** Github Pages
+***_ Github Pagesについて
+** Misc
+***_ スクラッチ
+** Mkdocs
+***_ Mkdocsについて
+***_ 始めるには
+***_ 拡張機能
+** Plantuml
+***_ plantumlについて
+** Python
+***_ Pythonメモ
+** <font color=red>Vscode
+***_ <font color=red>Vim風環境を整える
+
+@endmindmap

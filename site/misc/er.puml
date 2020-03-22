@@ -1,0 +1,61 @@
+@startuml
+hide circle
+skinparam Shadowing false
+skinparam Linetype ortho
+skinparam ClassBorderColor black
+skinparam ArrowColor #3399cc
+
+entity "注文" as sales {
+    *sales : int
+    --
+    *order_id : int
+}
+entity "注文配送先" as sales_dest {
+    *sales : int
+    *dest : int
+    --
+    *name : nvarchar(30)
+}
+
+entity "注文明細" as sales_detail {
+    *sales : int
+    *detail : int
+    --
+    *dest : int
+    *goods : int
+}
+
+entity "<b>商品" as goods #ffdddd {
+    *goods : int
+    --
+    *name : nvarchar(80)
+}
+entity "<b>商品価格" as goods_price #ffdddd {
+    *rank : int
+    *goods : int
+    --
+    *price : decimal(19,3)
+}
+
+entity "<b>会員ランク" as rank #ddffdd {
+    *rank : int
+    --
+    *rank_name : nvarchar(30)
+}
+
+entity "<b>会員" as customer #ddffdd {
+    *customer : int
+    --
+    *rank : int
+}
+
+sales ||--|{ sales_dest
+sales_dest ||-|{ sales_detail
+sales_detail ||-|| goods
+goods ||-|{ goods_price
+rank ||--|{ goods_price
+' rank ||-o{ customer
+customer }o-|| rank
+sales }o- customer
+
+@enduml

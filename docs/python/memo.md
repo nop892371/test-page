@@ -55,18 +55,6 @@
     | 文書ルート | `c:\work\env-docs\test-page`                 |
     | git url    | `https://github.com/nop892371/test-page.git` |
 
-    ```powershell
-    # 仮想環境を作成
-    > cd C:\work
-    > python -m venv env-docs
-    > cd env-docs
-    > .\Scripts\activate
-
-    # 文書をダウンロード
-    > git clone https://github.com/nop892371/test-page.git
-    > pip install -r requirement.txt
-    ```
-
     ```plantuml
     @startuml
     skinparam shadowing false
@@ -75,7 +63,7 @@
     skinparam ActivityBorderThickness 1
     skinparam ActivityArrowColor #3399cc
     skinparam ActivityFontName 'Meiryo UI'
-    skinparam ActivityFontSize 20
+    skinparam ActivityFontSize 14
     skinparam ActivityDiamondBackgroundColor white
     skinparam ActivityDiamondBorderColor black
     skinparam ActivityDiamondBorderThickness 1
@@ -112,3 +100,28 @@
         ```
         ※vscode導入済みとします。
 
+## vscodeのvimでESC押下時に日本語入力を解除する方法
+
+AutoHotKeyを使う方法。  
+以下のスクリプトを作成し、"Vim_Mode.ahk"などの名前で保存して、起動時に実行するようにしておく。 [^ahk]
+
+```text
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+$Esc::
+  Send,{Esc}
+  Sleep 1
+  Send,{sc07B}
+  Return
+$^[::
+  Send,{^[}
+  Sleep 1
+  Send,{sc07B}
+  Return
+```
+
+
+[^ahk]: Windows10の場合、スタートアップディレクトリは`C:\Users\自分のユーザー名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`となる。

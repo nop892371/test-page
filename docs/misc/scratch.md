@@ -13,29 +13,3 @@ AutoHotKeyを使う方法。
 ```
 
 [^ahk]: Windows10の場合、スタートアップディレクトリは`C:\Users\自分のユーザー名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`となる。
-
-## サイトマップ整理
-
-[sitemap.puml](sitemap.puml) - ソースコード[^sitemap_puml]
-
-```plantuml
---8<-- "docs/misc/sitemap.puml"
-```
-
-[^sitemap_puml]:
-    ```text
-    --8<-- "docs/misc/sitemap.puml"
-    ```
-
-## PlantUMLでER図
-
-[er.puml](er.puml) - ソースコード[^er_puml]
-
-```plantuml
---8<-- "docs/misc/er.puml"
-```
-
-[^er_puml]:
-    ```text
-    --8<-- "docs/misc/er.puml"
-    ```

@@ -8,7 +8,16 @@ mindmapDiagram {
     FontName 'MeiryoUI'
 }
 </style>
+
 skinparam shadowing false
+
+!function $back($bgcolor)
+<style>
+node {
+    BackGroundColor $bgcolor
+}
+</style>
+!endfunction
 
 * サイト構成
 **_ マイページ
@@ -16,10 +25,12 @@ skinparam shadowing false
 ***_ Github Pagesについて
 ** Misc
 ***_ スクラッチ
+$back("#ffffcc")
 ** Mkdocs
 ***_ Mkdocsについて
 ***_ 始めるには
 ***_ 拡張機能
+$back("white")
 ** Plantuml
 ***_ plantumlについて
 ** Python

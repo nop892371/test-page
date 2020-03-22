@@ -586,23 +586,23 @@
 </code></pre></div>
 
 <p>mkdocs.ymlに以下を記述します。</p>
-<div class="codehilite"><pre><span></span><code><span class="c">markdown_extensions:</span>
-<span class="c">  - pymdownx.arithmatex</span>
-<span class="c">  - pymdownx.betterem:</span>
-<span class="c">      smart_enable: all</span>
-<span class="c">  - pymdownx.caret</span>
-<span class="c">  - pymdownx.critic</span>
-<span class="c">  - pymdownx.details</span>
-<span class="c">  - pymdownx.emoji:</span>
-<span class="c">      emoji_generator: !!python/name:pymdownx.emoji.to_svg</span>
-<span class="c">  - pymdownx.inlinehilite</span>
-<span class="c">  - pymdownx.magiclink</span>
-<span class="c">  - pymdownx.mark</span>
-<span class="c">  - pymdownx.smartsymbols</span>
-<span class="c">  - pymdownx.superfences</span>
-<span class="c">  - pymdownx.tasklist:</span>
-<span class="c">      custom_checkbox: true</span>
-<span class="c">  - pymdownx.tilde</span>
+<div class="codehilite"><pre><span></span><code><span class="n">markdown_extensions</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">arithmatex</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">betterem</span><span class="p">:</span>
+      <span class="n">smart_enable</span><span class="p">:</span> <span class="k">all</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">caret</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">critic</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">details</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">emoji</span><span class="p">:</span>
+      <span class="n">emoji_generator</span><span class="p">:</span> <span class="o">!!</span><span class="n">python</span><span class="o">/</span><span class="n">name</span><span class="p">:</span><span class="n">pymdownx</span><span class="p">.</span><span class="n">emoji</span><span class="p">.</span><span class="n">to_svg</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">inlinehilite</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">magiclink</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">mark</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">smartsymbols</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">superfences</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">tasklist</span><span class="p">:</span>
+      <span class="n">custom_checkbox</span><span class="p">:</span> <span class="k">true</span>
+  <span class="o">-</span> <span class="n">pymdownx</span><span class="p">.</span><span class="n">tilde</span>
 </code></pre></div>
 
 <table>
@@ -670,28 +670,28 @@
 <h3 id="arithmatex">Arithmatex<a class="headerlink" href="#arithmatex" title="Permanent link">#</a></h3>
 <p>数式の表示をおこなう機能です。<br />
 mkdocs.ymlに以下を追記し<a href="https://www.mathjax.org/">Mathjax</a>を導入します。</p>
-<div class="codehilite"><pre><span></span><code><span class="c">extra_javascript: </span>
-<span class="c">  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML</span>
+<div class="codehilite"><pre><span></span><code><span class="n">extra_javascript</span><span class="p">:</span> 
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdnjs</span><span class="p">.</span><span class="n">cloudflare</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ajax</span><span class="o">/</span><span class="n">libs</span><span class="o">/</span><span class="n">mathjax</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">5</span><span class="o">/</span><span class="n">MathJax</span><span class="p">.</span><span class="n">js</span><span class="o">?</span><span class="n">config</span><span class="o">=</span><span class="n">TeX</span><span class="o">-</span><span class="n">MML</span><span class="o">-</span><span class="n">AM_CHTML</span>
 </code></pre></div>
 
 <p>マークダウン文書内に数式を以下のように記述します。</p>
-<div class="codehilite"><pre><span></span><code><span class="err">$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$, \(p(x|y) = \frac{p(y|x)p(x)}{p(y)}\).</span>
+<div class="codehilite"><pre><span></span><code><span class="err">$</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="o">|</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="err">\</span><span class="n">frac</span><span class="err">{</span><span class="n">p</span><span class="p">(</span><span class="n">y</span><span class="o">|</span><span class="n">x</span><span class="p">)</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">}{</span><span class="n">p</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">}$</span><span class="p">,</span> <span class="err">\</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="o">|</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="err">\</span><span class="n">frac</span><span class="err">{</span><span class="n">p</span><span class="p">(</span><span class="n">y</span><span class="o">|</span><span class="n">x</span><span class="p">)</span><span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">}{</span><span class="n">p</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="err">}\</span><span class="p">).</span>
 </code></pre></div>
 
 <p>数式が表示されます。</p>
 <p><span><span class="MathJax_Preview">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</span><script type="math/tex">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</script></span>, <span><span class="MathJax_Preview">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</span><script type="math/tex">p(x|y) = \frac{p(y|x)p(x)}{p(y)}</script></span>.</p>
 <details class="note"><summary>ブロックを使う場合</summary><p>ブロックを使う場合、ブロックは<code>$$</code>, <code>\[</code>, <code>\begin{}</code>で始まり<code>$$</code>, <code>\]</code>, <code>\end{}</code>で終わる必要があります。<br />
 ブロックは空行を含まないようにし、前後に空行をいれます。</p>
-<div class="codehilite"><pre><span></span><code><span class="err">$$</span>
-<span class="n">E</span><span class="p">(</span><span class="err">\</span><span class="n">mathbf</span><span class="err">{</span><span class="n">v</span><span class="err">}</span><span class="p">,</span> <span class="err">\</span><span class="n">mathbf</span><span class="err">{</span><span class="n">h</span><span class="err">}</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="err">\</span><span class="n">sum_</span><span class="err">{</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="err">}</span><span class="n">w_</span><span class="err">{</span><span class="n">ij</span><span class="err">}</span><span class="n">v_i</span> <span class="n">h_j</span> <span class="o">-</span> <span class="err">\</span><span class="n">sum_i</span> <span class="n">b_i</span> <span class="n">v_i</span> <span class="o">-</span> <span class="err">\</span><span class="n">sum_j</span> <span class="n">c_j</span> <span class="n">h_j</span>
-<span class="err">$$</span>
+<div class="codehilite"><pre><span></span><code>$$
+<span class="nv">E</span><span class="ss">(</span>\<span class="nv">mathbf</span>{<span class="nv">v</span>}, \<span class="nv">mathbf</span>{<span class="nv">h</span>}<span class="ss">)</span> <span class="o">=</span> <span class="o">-</span>\<span class="nv">sum_</span>{<span class="nv">i</span>,<span class="nv">j</span>}<span class="nv">w_</span>{<span class="nv">ij</span>}<span class="nv">v_i</span> <span class="nv">h_j</span> <span class="o">-</span> \<span class="nv">sum_i</span> <span class="nv">b_i</span> <span class="nv">v_i</span> <span class="o">-</span> \<span class="nv">sum_j</span> <span class="nv">c_j</span> <span class="nv">h_j</span>
+$$
 
-<span class="err">\</span><span class="p">[</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="err">\</span><span class="p">]</span>
+\[<span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span>\]
 
-<span class="err">\</span><span class="k">begin</span><span class="err">{</span><span class="n">align</span><span class="err">}</span>
-    <span class="n">p</span><span class="p">(</span><span class="n">v_i</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="err">\</span><span class="n">mathbf</span><span class="err">{</span><span class="n">h</span><span class="err">}</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="err">\</span><span class="n">sigma</span><span class="err">\</span><span class="k">left</span><span class="p">(</span><span class="err">\</span><span class="n">sum_j</span> <span class="n">w_</span><span class="err">{</span><span class="n">ij</span><span class="err">}</span><span class="n">h_j</span> <span class="o">+</span> <span class="n">b_i</span><span class="err">\</span><span class="k">right</span><span class="p">)</span> <span class="err">\\</span>
-    <span class="n">p</span><span class="p">(</span><span class="n">h_j</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span><span class="err">\</span><span class="n">mathbf</span><span class="err">{</span><span class="n">v</span><span class="err">}</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">=</span> <span class="err">\</span><span class="n">sigma</span><span class="err">\</span><span class="k">left</span><span class="p">(</span><span class="err">\</span><span class="n">sum_i</span> <span class="n">w_</span><span class="err">{</span><span class="n">ij</span><span class="err">}</span><span class="n">v_i</span> <span class="o">+</span> <span class="n">c_j</span><span class="err">\</span><span class="k">right</span><span class="p">)</span>
-<span class="err">\</span><span class="k">end</span><span class="err">{</span><span class="n">align</span><span class="err">}</span>
+\<span class="nv">begin</span>{<span class="nv">align</span>}
+    <span class="nv">p</span><span class="ss">(</span><span class="nv">v_i</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span>\<span class="nv">mathbf</span>{<span class="nv">h</span>}<span class="ss">)</span> <span class="o">&amp;</span> <span class="o">=</span> \<span class="nv">sigma</span>\<span class="nv">left</span><span class="ss">(</span>\<span class="nv">sum_j</span> <span class="nv">w_</span>{<span class="nv">ij</span>}<span class="nv">h_j</span> <span class="o">+</span> <span class="nv">b_i</span>\<span class="nv">right</span><span class="ss">)</span> \\
+    <span class="nv">p</span><span class="ss">(</span><span class="nv">h_j</span><span class="o">=</span><span class="mi">1</span><span class="o">|</span>\<span class="nv">mathbf</span>{<span class="nv">v</span>}<span class="ss">)</span> <span class="o">&amp;</span> <span class="o">=</span> \<span class="nv">sigma</span>\<span class="nv">left</span><span class="ss">(</span>\<span class="nv">sum_i</span> <span class="nv">w_</span>{<span class="nv">ij</span>}<span class="nv">v_i</span> <span class="o">+</span> <span class="nv">c_j</span>\<span class="nv">right</span><span class="ss">)</span>
+\<span class="k">end</span>{<span class="nv">align</span>}
 </code></pre></div>
 
 <div>
@@ -795,7 +795,7 @@ text</mark><span class="critic comment">This works quite well. I just wanted to 
 <p>&lt;mark&gt;タグによるマークを挿入できます。</p>
 <div class="admonition note">
 <p class="admonition-title">マーク</p>
-<p><div class="codehilite"><pre><span></span><code><span class="err">簡単に ==マーク== できます。</span>
+<p><div class="codehilite"><pre><span></span><code><span class="err">簡単に</span> <span class="o">==</span><span class="err">マーク</span><span class="o">==</span> <span class="err">できます。</span>
 </code></pre></div>
 簡単に <mark>マーク</mark> できます。</p>
 </div>
@@ -807,7 +807,7 @@ text</mark><span class="critic comment">This works quite well. I just wanted to 
 <p>ネストされたpythonコードの例です。
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hoge&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;hoge&#39;</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <h2 id="font-awesome">Font Awesome<a class="headerlink" href="#font-awesome" title="Permanent link">#</a></h2>

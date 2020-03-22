@@ -3,6 +3,9 @@
 !!! summary ""
     UMLを描くツールです。テキストで記述します。
 
+
+## ユースケース図
+
 ユースケース図の例
 
 ```plantuml
@@ -101,6 +104,7 @@ rectangle github #fff0f0-ffffff {
     }
     @enduml
     ```
+## シーケンス図
 
 シーケンス図の例
 
@@ -153,4 +157,32 @@ deactivate
     Github --> page ** : 作成
     deactivate
     @enduml
+    ```
+
+## ER図
+
+[er.puml](er.puml) - ソースコード[^er_puml]
+
+```plantuml
+--8<-- "docs/plantuml/er.puml"
+```
+
+[^er_puml]:
+    ```text
+    --8<-- "docs/plantuml/er.puml"
+    ```
+
+## マインドマップ
+
+サイトマップ整理
+
+[sitemap.puml](sitemap.puml) - ソースコード[^sitemap_puml]
+
+```plantuml
+--8<-- "docs/plantuml/sitemap.puml"
+```
+
+[^sitemap_puml]:
+    ```text
+    --8<-- "docs/plantuml/sitemap.puml"
     ```

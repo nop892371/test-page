@@ -1,0 +1,11 @@
+@startsalt
+{
+{T
++ <&folder>mysite
+    ++ <&folder>docs
+        +++ <&folder>some_page
+            ++++ <&file>index.md
+            ++++ <&file>chart.puml
+}
+}
+@endsalt

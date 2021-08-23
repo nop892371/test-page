@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="jp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css">
+    <link rel="Stylesheet" type="text/css" href="css/custom.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <title>Django_Rest_Framework</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="."><i class="fas fa-arrow-alt-circle-right"></i>チーム情報</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                </ul>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            -->
+        </div>
+    </nav>
+    <div class="container-fluid">
+    <div class="content">
+    
+<div id="Django REST Framework"><h1 id="Django REST Framework">Django REST Framework</h1></div>
+
+<div id="Django REST Framework-環境構築"><h2 id="環境構築">環境構築</h2></div>
+
+<pre>
+cd django-rest-sample
+python -m venv venv
+.\venv\Scripts\activate
+
+vim requirements.txt
+---
+django
+djangorestframework
+django-filter 
+---
+
+pip install -r requirements.txt
+django-admin startproject django_rest_sample .
+python manage.py startapp app01
+</pre>
+
+<p>
+<code>django-admin startproject django-rest-sample .</code>
+</p>
+
+<p>
+上記コマンドの最後に.をつけた場合とつけない場合、以下の違いがある。
+.をつけた場合は、余計に1つフォルダを作る手間を省くことができる。
+</p>
+
+<p>
+フォルダは以下になる。
+</p>
+
+<pre>
+django-rest-sample/
+    app01/
+    django_rest_sample/
+    venv/
+    manage.py
+    requirements.txt
+</pre>
+
+<p>
+app01/model.py
+</p>
+<pre>
+from django.db import models
+
+
+class User(models.Model):
+    name = models.CharField(max_length=32)
+    mail = models.EmailField()
+
+
+class Entry(models.Model):
+    STATUS_DRAFT = "draft"
+    STATUS_PUBLIC = "public"
+    STATUS_SET = (
+            (STATUS_DRAFT, "下書き"),
+            (STATUS_PUBLIC, "公開中"),
+    )
+    title = models.CharField(max_length=128)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    status = models.CharField(choices=STATUS_SET, default=STATUS_DRAFT, max_length=8)
+    author = models.ForeignKey(User, related_name='entries', on_delete=models.CASCADE)
+
+</pre>
+
+<p>
+django_rest_sample/setting.py
+</p>
+<pre>
+…
+# blogを追記
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01',
+]
+…
+</pre>
+
+<pre>
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+---
+ID: admin
+PW: admin
+---
+
+python manage.py runserver
+</pre>
+
+<p>
+動作確認できます。
+</p>
+
+<p>
+<code>http://localhost:8000/admin</code>
+</p>
+
+<p>
+app01/admin.py
+</p>
+<pre>
+from django.contrib import admin
+
+from .models import User, Entry
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Entry)
+class Entry(admin.ModelAdmin):
+    pass
+</pre>
+
+<p>
+再起動すると編集可能になります。
+</p>
+
+
+<div id="Django REST Framework-Django REST Frameworkの組み込み"><h2 id="Django REST Frameworkの組み込み">Django REST Frameworkの組み込み</h2></div>
+
+<p>
+django_rest_sample/setting.py
+</p>
+<pre>
+INSTALLED_APPS = (
+    ...
+    'app01',
+    'rest_framework',
+)
+
+</pre>
+
+<p>
+これでDjangoからREST Frameworkを呼び出せるようになりました。
+</p>
+
+<p>
+REST APIを作成するには最低限以下の3つを定義する必要があります。
+</p>
+
+<ul>
+<li>
+Serializer
+
+<li>
+ViewSet
+
+<li>
+URL pattern
+
+</ul>
+
+<div id="Django REST Framework-Django REST Frameworkの組み込み-Serializerの定義"><h3 id="Serializerの定義">Serializerの定義</h3></div>
+
+<p>
+app01/serializer.py
+</p>
+<pre>
+# coding: utf-8
+
+from rest_framework import serializers
+
+from .models import User, Entry
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('name', 'mail')
+
+
+class EntrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Entry
+        fields = ('title', 'body', 'created_at', 'status', 'author')
+</pre>
+
+<div id="Django REST Framework-Django REST Frameworkの組み込み-ViewSetの定義"><h3 id="ViewSetの定義">ViewSetの定義</h3></div>
+
+<p>
+app01/views.py
+</p>
+<pre>
+# coding: utf-8
+
+import django_filters
+from rest_framework import viewsets, filters
+
+from .models import User, Entry
+from .serializer import UserSerializer, EntrySerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class EntryViewSet(viewsets.ModelViewSet):
+    queryset = Entry.objects.all()
+    serializer_class = EntrySerializer
+</pre>
+
+<div id="Django REST Framework-Django REST Frameworkの組み込み-URL pattern定義"><h3 id="URL pattern定義">URL pattern定義</h3></div>
+
+<p>
+django_rest_sample/urls.py
+</p>
+<pre>
+# coding: utf-8
+
+from django.conf.urls import url, include
+from django.contrib import admin
+
+from app01.urls import router as app01_router
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    # app01.urlsをincludeする
+    url(r'^api/', include(app01_router.urls)),
+]
+</pre>
+
+<p>
+app01/urls.py
+</p>
+<pre>
+# coding: utf-8
+
+from rest_framework import routers
+from .views import UserViewSet, EntryViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'entries', EntryViewSet)
+</pre>
+
+<div id="Django REST Framework-API動作確認"><h2 id="API動作確認">API動作確認</h2></div>
+
+<p>
+<code>python manage.py runserver</code>
+でサーバーを起動させ、<a href="http://localhost:8000/api/">http://localhost:8000/api/</a>にアクセスしてみます。
+</p>
+
+<p>
+Authorの選択肢が全部「User Object」になってしまっていますが、これはUserModelの _<em>str</em>_ を適切に上書きしてあげることで識別できるようになります。
+</p>
+
+<p>
+app01/models.py
+</p>
+<pre>
+class User(models.Model):
+    …
+    def __repr__(self):
+        # 主キーとnameを表示させて見やすくする
+        # ex) 1: Alice
+        return "{}: {}".format(self.pk, self.name)
+
+    __str__ = __repr__  # __str__にも同じ関数を適用
+</pre>
+
+<div id="Django REST Framework-API動作確認-リレーションモデルを展開する"><h3 id="リレーションモデルを展開する">リレーションモデルを展開する</h3></div>
+
+<pre>
+...
+class EntrySerializer(serializers.ModelSerializer):
+    author = UserSerializer()
+
+    class Meta:
+        model = Entry
+        fields = ('title', 'body', 'created_at', 'status', 'author')
+</pre>
+
+    </div>
+    <p><small>Page created on 2021-08-23</small></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

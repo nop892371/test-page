@@ -1,0 +1,59 @@
+= Contents =
+    - [[#<i class="far fa-file"></i>javascript|<i class="far fa-file"></i>javascript]]
+        - [[#<i class="far fa-file"></i>javascript#<i class="fas fa-arrow-right"></i>highlight.js|<i class="fas fa-arrow-right"></i>highlight.js]]
+        - [[#<i class="far fa-file"></i>javascript#<i class="fas fa-arrow-right"></i>名前空間|<i class="fas fa-arrow-right"></i>名前空間]]
+ 
+
+= <i class="far fa-file"></i>javascript =
+
+== <i class="fas fa-arrow-right"></i>highlight.js ==
+
+<i class="fas fa-fish" style=""></i>設置方法。
+
+{{{
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+}}}
+
+コードはpre,codeで囲う。
+
+{{{
+<pre>
+    <code>
+        ...ソースコード...
+    </code>
+</pre>
+}}}
+
+明示的に言語指定する場合。
+
+{{{
+<pre><code class="html">...</code></pre>
+}}}
+
+
+== <i class="fas fa-arrow-right"></i>名前空間 ==
+
+書き方1
+
+{{{
+    var util = {
+        addition: function(num1,num2){
+            return num1+num2;
+        },
+    } 
+
+    var result = util.add(5,10);
+}}}
+
+書き方2
+
+{{{
+    var util = util || {}
+    util.add = function(num1, num2) {
+        return num1 + num2;
+    }
+    
+    var result = util.add(5,10);
+}}}

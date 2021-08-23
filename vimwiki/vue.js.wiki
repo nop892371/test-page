@@ -1,0 +1,63 @@
+= Vue.js =
+
+Vue.jsは、ユーザーインターフェイスを構築するためのJavaScriptフレームワーク。
+
+- [[https://jp.vuejs.org/index.html|Vue.js公式]]
+- [[https://cr-vue.mio3io.com/examples/tab.htm|基礎から学ぶ Vue.js - 切り替えタブ]]
+- [[https://teratail.com/questions/170468|v-for内のカスタムコンポーネントのcheckboxでv-modelを使う方法]]
+- [[https://qiita.com/ryo2132/items/2e3fcedaffeff9fc3967#select|Vue.jsでFormの各要素をComponent化する際の覚え書き]]
+- [[https://qiita.com/ozone/items/b75efe5c449cbc469b1e|Vue.js：v-modelと$emitを使ってデータを読み書きする子コンポーネントをつくる]]
+- [[https://getbootstrap.jp/|Bootstrap公式]]
+- [[https://blog.capilano-fw.com/?p=6646|axios不要！fetch()でAjax通信する方法]]
+- [[https://qiita.com/kimihiro_n/items/86e0a9e619720e57ecd8|Django REST Frameworkを使って爆速でAPIを実装する]]
+
+
+=== サンプル1 ===
+<div id="vue-sample"></div>
+
+=== サンプル2 ===
+
+入力フォームのコンポーネント化サンプル。
+
+<div id="vue-sample2"></div>
+
+
+
+%% ※シンタックスハイライトの練習
+%% 
+%% sample.html
+%% 
+%% {{{
+%% <div id="app">
+%%   <app-header></app-header>
+%%   <app-icon-list></app-icon-list>
+%% </div>
+%% }}}
+%% 
+%% sample.js
+%% 
+%% {{{
+%% Vue.component('app-icon-list', {
+%%   template: `
+%%     <div>
+%%       <span
+%%         class="copy-icon"
+%%         v-for="iconTag in setting.iconTagList"
+%%         v-html="iconTag"
+%%         @click="onClickIcon"
+%%         :data-icon="iconTag">
+%%       </span>
+%%     </div>
+%%     `,
+%%   methods: {
+%%     onClickIcon: function(e) {
+%%       var iconTag = e.currentTarget.getAttribute('data-icon');
+%%       navigator.clipboard.writeText(iconTag);
+%%     }
+%%   }
+%% });
+%% 
+%% var app = new Vue({
+%%   el: '#app',
+%% })
+%% }}}

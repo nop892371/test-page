@@ -1,0 +1,241 @@
+= Django REST Framework =
+
+== 環境構築 ==
+
+{{{
+cd django-rest-sample
+python -m venv venv
+.\venv\Scripts\activate
+
+vim requirements.txt
+---
+django
+djangorestframework
+django-filter 
+---
+
+pip install -r requirements.txt
+django-admin startproject django_rest_sample .
+python manage.py startapp app01
+}}}
+
+`django-admin startproject django-rest-sample .`
+
+上記コマンドの最後に.をつけた場合とつけない場合、以下の違いがある。
+.をつけた場合は、余計に1つフォルダを作る手間を省くことができる。
+
+フォルダは以下になる。
+
+{{{
+django-rest-sample/
+    app01/
+    django_rest_sample/
+    venv/
+    manage.py
+    requirements.txt
+}}}
+
+app01/model.py
+{{{
+from django.db import models
+
+
+class User(models.Model):
+    name = models.CharField(max_length=32)
+    mail = models.EmailField()
+
+
+class Entry(models.Model):
+    STATUS_DRAFT = "draft"
+    STATUS_PUBLIC = "public"
+    STATUS_SET = (
+            (STATUS_DRAFT, "下書き"),
+            (STATUS_PUBLIC, "公開中"),
+    )
+    title = models.CharField(max_length=128)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    status = models.CharField(choices=STATUS_SET, default=STATUS_DRAFT, max_length=8)
+    author = models.ForeignKey(User, related_name='entries', on_delete=models.CASCADE)
+
+}}}
+
+django_rest_sample/setting.py
+{{{
+…
+# blogを追記
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'app01',
+]
+…
+}}}
+
+{{{
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+---
+ID: admin
+PW: admin
+---
+
+python manage.py runserver
+}}}
+
+動作確認できます。
+
+`http://localhost:8000/admin`
+
+app01/admin.py
+{{{
+from django.contrib import admin
+
+from .models import User, Entry
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Entry)
+class Entry(admin.ModelAdmin):
+    pass
+}}}
+
+再起動すると編集可能になります。
+
+
+== Django REST Frameworkの組み込み ==
+
+django_rest_sample/setting.py
+{{{
+INSTALLED_APPS = (
+    ...
+    'app01',
+    'rest_framework',
+)
+
+}}}
+
+これでDjangoからREST Frameworkを呼び出せるようになりました。
+
+REST APIを作成するには最低限以下の3つを定義する必要があります。
+
+- Serializer
+- ViewSet
+- URL pattern
+
+=== Serializerの定義 ===
+
+app01/serializer.py
+{{{
+# coding: utf-8
+
+from rest_framework import serializers
+
+from .models import User, Entry
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('name', 'mail')
+
+
+class EntrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Entry
+        fields = ('title', 'body', 'created_at', 'status', 'author')
+}}}
+
+=== ViewSetの定義 ===
+
+app01/views.py
+{{{
+# coding: utf-8
+
+import django_filters
+from rest_framework import viewsets, filters
+
+from .models import User, Entry
+from .serializer import UserSerializer, EntrySerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class EntryViewSet(viewsets.ModelViewSet):
+    queryset = Entry.objects.all()
+    serializer_class = EntrySerializer
+}}}
+
+=== URL pattern定義 ===
+
+django_rest_sample/urls.py
+{{{
+# coding: utf-8
+
+from django.conf.urls import url, include
+from django.contrib import admin
+
+from app01.urls import router as app01_router
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    # app01.urlsをincludeする
+    url(r'^api/', include(app01_router.urls)),
+]
+}}}
+
+app01/urls.py
+{{{
+# coding: utf-8
+
+from rest_framework import routers
+from .views import UserViewSet, EntryViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'entries', EntryViewSet)
+}}}
+
+== API動作確認 ==
+
+`python manage.py runserver`
+でサーバーを起動させ、[[http://localhost:8000/api/]]にアクセスしてみます。
+
+Authorの選択肢が全部「User Object」になってしまっていますが、これはUserModelの __str__ を適切に上書きしてあげることで識別できるようになります。
+
+app01/models.py
+{{{
+class User(models.Model):
+    …
+    def __repr__(self):
+        # 主キーとnameを表示させて見やすくする
+        # ex) 1: Alice
+        return "{}: {}".format(self.pk, self.name)
+
+    __str__ = __repr__  # __str__にも同じ関数を適用
+}}}
+
+=== リレーションモデルを展開する ===
+
+{{{
+...
+class EntrySerializer(serializers.ModelSerializer):
+    author = UserSerializer()
+
+    class Meta:
+        model = Entry
+        fields = ('title', 'body', 'created_at', 'status', 'author')
+}}}

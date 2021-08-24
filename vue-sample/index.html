@@ -1,0 +1,38 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"></script>
+    <title>vue-sample</title>
+</head>
+<body>
+    <!-- <div id="app">
+        <h1>vue-sample</h1>
+        <ul>
+            <li v-for="menu in menuList">
+                <a :href="menu.link">{{menu.label}}</a>
+                <span v-if="menu.desc != ''"> - {{menu.desc}}</span>
+            </li>
+        </ul>
+    </div> -->
+
+    <div id="app" class="container">
+        <fnp-header></fnp-header>
+
+        <div class="card card-body mt-4">
+            <ul>
+                <li v-for="menu in menuList">
+                    <a :href="menu.link">{{menu.label}}</a>
+                    <span v-if="menu.desc != ''"> - {{menu.desc}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="js/common.js"></script>
+    <script src="js/top.js"></script>
+</body>
+</html>
+        

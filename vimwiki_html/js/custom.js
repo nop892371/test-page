@@ -1,8 +1,15 @@
 $(function() {
+    //-------------------------
     // 共通処理
+    //-------------------------
+
     $('pre').replaceWith(function() {
       $(this).replaceWith("<pre><code>"+$(this).html()+"</code></pre>")
     });
+
+    //-------------------------
+    // ページごとの処理
+    //-------------------------
 
     if (document.URL.match("FontAwesome")) {
         $icons = $('.icon-list i[class^=fa]');

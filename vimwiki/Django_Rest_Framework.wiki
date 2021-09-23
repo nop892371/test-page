@@ -239,3 +239,25 @@ class EntrySerializer(serializers.ModelSerializer):
         model = Entry
         fields = ('title', 'body', 'created_at', 'status', 'author')
 }}}
+
+--------------
+
+- プロジェクトフォルダ作成
+{{{
+cd django-rest-sample
+python -m venv venv
+.\venv\Scripts\activate
+
+vim requirements.txt
+---
+django
+djangorestframework
+django-filter 
+---
+
+pip install -r requirements.txt
+django-admin startproject django_rest_sample .
+python manage.py startapp app01
+}}}
+- プロジェクト作成
+- アプリ作成
